@@ -8,7 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import dao.DAOException;
 import dao.TopLoginDAO;
@@ -23,7 +22,6 @@ public class TopLoginServlt extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
 		int inputID = Integer.parseInt(request.getParameter("id"));
 		String inputPass = request.getParameter("pass");
 		
@@ -32,19 +30,21 @@ public class TopLoginServlt extends HttpServlet {
 			TopLoginDAO loginDAO = new TopLoginDAO();
 			bLogin = loginDAO.isLogin(inputID, inputPass);
 		}catch(DAOException e) {
-			request.setAttribute("message", "エラー：JDBCドライバの登録に失敗");
-			gotoPage(request,response,"errinternal.jsp");
+			request.setAttribute("message", "エラー：SQLエラー");
+			gotoPage(request,response,"/errInternal.jsp");
+			return;
 		}
 		
 		if(bLogin)
 		{
-			HttpSession session = request.getSession();
-			session.setAttribute("login", true);
+			response.sendRedirect("TopMenu.html");
+			return;
 		}
 		else
 		{
 			request.setAttribute("loginConf", false);
 			gotoPage(request,response,"TopLogin.jsp");
+			return;
 		}
 	}
 	
