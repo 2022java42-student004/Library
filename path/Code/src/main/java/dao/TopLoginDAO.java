@@ -18,11 +18,17 @@ public class TopLoginDAO{
 		}
 	}
 	
-	boolean isLogin(String _id ,String _pass)
+	public boolean isLogin(String _sID ,String _sPass)
 	{
 		//SQL文の作成
-		String sql = "SELECT * FROM category ORDER BY code";
+		//String sql = "SELECT * FROM category ORDER BY code";
 		
-		return true;
+		boolean bRet =false;
+		if(_sID.equals("test") && _sPass.equals("test"))
+		{
+			bRet = true;
+		}
+		
+		return bRet;
 	}
 }
