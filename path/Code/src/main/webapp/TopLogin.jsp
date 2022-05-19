@@ -5,14 +5,18 @@
 		<meta charset="UTF-8">
 		<title>ログイン画面</title>
 		<style>
-		p{text-align: center}
+		.s_center{text-align: center}
+		.s_id{
+			text-align: center;
+			text-indent : 62px;
+			}
 		</style>
 	</head>
 	<body>
 		<form action="TopLoginServlt" method="post">
-			ID : <input type="text" name="id"><br>
-			パスワード：<input type="password" name="pass"><br>
-			<input type="submit" value="ログイン">
+			<p class="s_id">ID : <input type="text" name="id"><br></p>
+			<p class="s_center">パスワード：<input type="password" name="pass"><br></p>
+			<p class="s_center"><input type="submit" value="ログイン">
 		</form>
 	</body>
 </html>
