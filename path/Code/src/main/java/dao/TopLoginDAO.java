@@ -24,6 +24,7 @@ public class TopLoginDAO{
 		}
 	}
 	
+	//ログインできたかどうか返す
 	public boolean isLogin(int _sID ,String _sPass)throws DAOException
 	{
 		boolean bRet =false;
