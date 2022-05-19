@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.DAOException;
 import dao.TopLoginDAO;
@@ -37,11 +38,13 @@ public class TopLoginServlt extends HttpServlet {
 		
 		if(bLogin)
 		{
-			request.setAttribute("loginConf", true);
+			HttpSession session = request.getSession();
+			session.setAttribute("login", true);
 		}
 		else
 		{
-			
+			request.setAttribute("loginConf", false);
+			gotoPage(request,response,"TopLogin.jsp");
 		}
 	}
 	

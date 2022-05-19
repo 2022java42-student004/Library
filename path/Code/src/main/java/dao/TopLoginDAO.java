@@ -1,5 +1,8 @@
 package dao;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+
 public class TopLoginDAO{
 	//URL、ユーザ名、パスワード準備
 	private String url = "jdbc:postgresql:sample";
@@ -18,10 +21,16 @@ public class TopLoginDAO{
 		}
 	}
 	
-	public boolean isLogin(String _sID ,String _sPass)
+	public boolean isLogin(String _sID ,String _sPass)throws DAOException
 	{
 		//SQL文の作成
-		//String sql = "SELECT * FROM category ORDER BY code";
+		String sql = "SELECT * FROM manager_id WHERE manager_id = ? & password = ?";
+		
+		try {
+			Connection con = DriverManager.getConnection(url);
+		}catch(DAOException e) {
+			
+		}
 		
 		boolean bRet =false;
 		if(_sID.equals("test") && _sPass.equals("test"))
