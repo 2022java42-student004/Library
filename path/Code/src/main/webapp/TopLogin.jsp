@@ -4,6 +4,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>ログイン画面</title>
+		<style>
+		p{text-align: center}
+		</style>
 	</head>
 	<body>
 		<form action="TopLoginServlt" method="post">
