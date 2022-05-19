@@ -2,6 +2,9 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class TopLoginDAO{
 	//URL、ユーザ名、パスワード準備
@@ -21,21 +24,25 @@ public class TopLoginDAO{
 		}
 	}
 	
-	public boolean isLogin(String _sID ,String _sPass)throws DAOException
+	public boolean isLogin(int _sID ,String _sPass)throws DAOException
 	{
+		boolean bRet =false;
 		//SQL文の作成
 		String sql = "SELECT * FROM manager_id WHERE manager_id = ? & password = ?";
 		
-		try {
+		try (
 			Connection con = DriverManager.getConnection(url);
-		}catch(DAOException e) {
+			PreparedStatement ps = con.prepareStatement(sql);){
+			ps.setInt(1, _sID);
+			ps.setString(2, _sPass);
 			
-		}
-		
-		boolean bRet =false;
-		if(_sID.equals("test") && _sPass.equals("test"))
-		{
-			bRet = true;
+			ResultSet rs = ps.executeQuery();
+			if(rs.next())
+			{
+				bRet = true;
+			}
+		}catch(SQLException e) {
+			throw new DAOException("エラー");
 		}
 		
 		return bRet;

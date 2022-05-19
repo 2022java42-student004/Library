@@ -24,7 +24,7 @@ public class TopLoginServlt extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
-		String inputID = request.getParameter("id");
+		int inputID = Integer.parseInt(request.getParameter("id"));
 		String inputPass = request.getParameter("pass");
 		
 		boolean bLogin = false;
