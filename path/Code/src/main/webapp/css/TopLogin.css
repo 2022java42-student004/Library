@@ -9,10 +9,6 @@
 
 .s_err{
 	text-align: center;
-	width : 500px;
-	hight : 14px;
-	padding : 20px;
-	border : 2px red solid;
-	background-color : red;
+	color : red;
 	margin: auto;
 }

@@ -9,13 +9,16 @@
 		<link href="css/TopLogin.css" rel="stylesheet">
 	</head>
 	<body>
-	<c:if test="${not empty loginConf || loginConf == false}">
-		<p class="s_err">IDかパスワードが違います</p>
-	</c:if>
-		<form action="TopLoginServlt" method="post">
-			<p class="s_id">ID : <input type="text" name="id"><br></p>
+	
+	<h1 class="s_center">図書管理システム</h1>
+	<form action="TopLoginServlt" method="post">
+			<p class="s_id">ID : <input type="number" name="id"><br></p>
 			<p class="s_center">パスワード：<input type="password" name="pass"><br></p>
+			<c:if test="${not empty loginConf || loginConf == false}">
+				<p class="s_err">IDかパスワードが違います</p>
+			</c:if>
 			<p class="s_center"><input type="submit" value="ログイン">
 		</form>
+		
 	</body>
 </html>
