@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+.s_center{text-align: center}
+
+.s_id{
+	text-align: center;
+	text-indent : 62px;
+}
+
+.s_err{
+	text-align: center;
+	width : 500px;
+	hight : 14px;
+	padding : 20px;
+	border : 2px red solid;
+	background-color : red;
+	margin: auto;
+}

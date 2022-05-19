@@ -28,20 +28,26 @@ public class TopLoginDAO{
 	{
 		boolean bRet =false;
 		//SQL文の作成
-		String sql = "SELECT * FROM manager_id WHERE manager_id = ? & password = ?";
+		String sql = "SELECT * FROM manager WHERE manager_id = ? AND password = ?";
 		
 		try (
-			Connection con = DriverManager.getConnection(url);
+			Connection con = DriverManager.getConnection(url,user,pass);
 			PreparedStatement ps = con.prepareStatement(sql);){
 			ps.setInt(1, _sID);
 			ps.setString(2, _sPass);
 			
-			ResultSet rs = ps.executeQuery();
-			if(rs.next())
-			{
-				bRet = true;
+			try {
+				ResultSet rs = ps.executeQuery();
+				if(rs.next())
+				{
+					bRet = true;
+				}
+			}catch(SQLException e) {
+				e.printStackTrace();
+				throw new DAOException("エラー");
 			}
 		}catch(SQLException e) {
+			e.printStackTrace();
 			throw new DAOException("エラー");
 		}
 		

@@ -6,22 +6,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>ログイン画面</title>
-		<style>
-			.s_center{text-align: center}
-			.s_id{
-				text-align: center;
-				text-indent : 62px;
-				}
-			.s_err{
-				text-align: center;
-				width : 500px;
-				hight : 14px;
-				padding : 20px;
-				border : 2px red solid;
-				background-color : red;
-				margin: auto;
-			}
-		</style>
+		<link href="css/TopLogin.css" rel="stylesheet">
 	</head>
 	<body>
 	<c:if test="${not empty loginConf || loginConf == false}">
