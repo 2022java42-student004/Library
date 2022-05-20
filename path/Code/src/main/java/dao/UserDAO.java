@@ -19,11 +19,12 @@ public class UserDAO {
 		}catch(ClassNotFoundException e) {
 			e.printStackTrace();
 			throw new DAOException("JDBCドライバの登録に失敗しました。");
+			
 		}
 	}
 	
 	//会員を取得する
-	UserBean GetMenber(int _iID)
+	public UserBean GetMenber(int _iID)
 	{
 		UserBean retBean = null;
 		
@@ -34,4 +35,6 @@ public class UserDAO {
 		
 		return retBean;
 	}
+	
+
 }
