@@ -87,7 +87,7 @@
 
 		
 
-			<input type="submit" value="戻る" formaction="LendingReturn.jsp"> <input
+			<input type="submit" value="戻る" formaction="/LibraryProject/lendingBook/LendingReturn.jsp"> <input
 				type="submit" value="返却">
 
 		</div>
