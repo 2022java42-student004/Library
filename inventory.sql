@@ -5,5 +5,5 @@
   rental_date DATE,
   fixed_date DATE,
   return_date DATE,
-  remarks TEXT,
+  remarks TEXT
   )
