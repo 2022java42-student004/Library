@@ -20,7 +20,7 @@
  </table>
  
  貸し出す資料ID<br>
-<form action="/lesson/ItemServlet3" method="post">
+<form action="/LibraryProject/LeadConf" method="post">
 
 <%
     for (int i = 0; i < 5; i++) {
@@ -30,9 +30,10 @@
     }
 %>
 
-	<input type="submit" name="return" value="戻る"size="5">
-	<input type="submit" name="lend" value="貸出" size="5">
- </form>
+	<input type="submit" name="return" value="戻る"size="5">	
+	<input type="button"  onclick="location.href='./LendConf.jsp'"name="lend" value="貸出" size="5">
+
+ </form> 
  
  
 

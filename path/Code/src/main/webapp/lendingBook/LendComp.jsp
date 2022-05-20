@@ -8,5 +8,7 @@
 </head>
 <body>
 
+<h1 style="text-align:center">貸出が完了しました。</h1>
+
 </body>
 </html>

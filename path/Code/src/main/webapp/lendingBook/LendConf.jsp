@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>LeadConf</title>
+<title>LendConf</title>
 
 <style>
 	div { text-align : center ; }
@@ -35,8 +35,8 @@
 
  <form action="/LibraryProject/LeadComp" method="post">
  <div>
-	<input type="submit"  display="inline-block"  name="return" value="戻る"  size="5">
-	<input type="submit" display="inline-block" name="return" value="貸出"  size="5">
+	<input type="button"  onclick="location.href='./LendBook.jsp'"  display="inline-block"  name="return" value="戻る"  size="5">
+	<input type="button"  onclick="location.href='./LendComp.jsp'"  display="inline-block" name="return" value="貸出"  size="5">
 	</div>
  </form>
  
