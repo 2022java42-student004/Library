@@ -1,6 +1,7 @@
 package bean;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class UserBean implements Serializable{
@@ -10,22 +11,26 @@ public class UserBean implements Serializable{
 	private String address;
 	private String tel;
 	private String mail;
-	private Date birthday;
-	private Date join_date;
-	private Date secode_date;
-	private Date update_date;
+	private String birthday;
+	private String join_date;
+	private String secode_date;
+	private String update_date;
+	private SimpleDateFormat nomalFM;
+	private SimpleDateFormat timeFM;
 	
 	public UserBean() {};
-	public UserBean(int _iID, String _strName,long _post_no,String _address, String _tel, String _mail,Date _birthday) 
+	public UserBean(int _iID, String _strName,long _post_no,String _address, String _tel, String _mail,Date _birthday , Date _join_date) 
 	{
+		nomalFM = new SimpleDateFormat("yyyy/MM/dd");
+		timeFM = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		this.iID = _iID;
 		this.strName = _strName;
 		this.post_no = _post_no;
 		this.address = _address;
 		this.tel = _tel;
 		this.mail = _mail;
-		this.birthday = _birthday;
-		join_date = new Date();
+		this.birthday = nomalFM.format(_join_date);
+		this.join_date = nomalFM.format(_join_date);
 	};
 	
 	
@@ -47,17 +52,17 @@ public class UserBean implements Serializable{
 	public String getMail() {return mail;}
 	public void setMail(String mail) {this.mail = mail;}
 	
-	public Date getBirthday() {return birthday;}
-	public void setBirthday(Date birthday) {this.birthday = birthday;}
+	public String getBirthday() {return birthday;}
+	public void setBirthday(Date birthday) {this.birthday = nomalFM.format(birthday);}
 	
-	public Date getJoin_date() {return join_date;}
-	public void setJoin_date(Date join_date) {this.join_date = join_date;}
+	public String getJoin_date() {return join_date;}
+	public void setJoin_date(Date join_date) {this.join_date = nomalFM.format(join_date);}
 	
-	public Date getSecode_date() {return secode_date;}
-	public void setSecode_date(Date secode_date) {this.secode_date = secode_date;}
+	public String getSecode_date() {return secode_date;}
+	public void setSecode_date(Date secode_date) {this.secode_date = nomalFM.format(secode_date);}
 	
-	public Date getUpdate_date() {return update_date;}
-	public void setUpdate_date(Date update_date) {this.update_date = update_date;}
+	public String getUpdate_date() {return update_date;}
+	public void setUpdate_date(Date update_date) {this.update_date = timeFM.format(update_date);}
 	
 	
 }

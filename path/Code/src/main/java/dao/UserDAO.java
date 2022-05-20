@@ -46,9 +46,16 @@ public class UserDAO {
 					{
 						retBean = new UserBean(rs.getInt("user_id"),rs.getString("name"),
 								rs.getLong("post_no"),rs.getString("address"),rs.getString("tel"),
-								rs.getString("mail"),rs.getDate("birthday"));
-						retBean.setSecode_date(rs.getDate("secede_date"));
-						retBean.setSecode_date(rs.getDate("update_date"));
+								rs.getString("mail"),rs.getDate("birthday"),new Date());
+						
+						if(rs.getDate("secede_date") != null)
+						{
+							retBean.setSecode_date(rs.getDate("secede_date"));
+						}
+						if(rs.getDate("update_date") != null)
+						{
+							retBean.setSecode_date(rs.getDate("update_date"));
+						}
 					}
 				}catch(SQLException e) {
 					e.printStackTrace();
@@ -58,11 +65,6 @@ public class UserDAO {
 				e.printStackTrace();
 				throw new DAOException("エラー");
 			}
-		
-		if(_strMail.equals("aaa@docomo.co.jp"))
-		{
-			retBean = new UserBean(1,"あああ",1600003L,"東京都千代田区千代田1-1","01200002222","aaa@docomo.co.jp,",new Date());
-		}
 		
 		return retBean;
 	}

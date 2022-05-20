@@ -5,31 +5,54 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>会員検索</title>
-		<link href="/css/TopLogin.css" rel="stylesheet">
+		<style>
+			.centermargin 
+			{
+				position: relative;
+				text-align: center;
+			}
+			.tableCeter{margin : auto;}
+			
+		</style>
 	</head>
 	<body>
-		<h2 class="s_center">会員情報</h2>
-		会員情報<br>
-		<form action="../SerchInfoUser" method="post">
+	<a href="/LibraryProject/TopMenu.html?Top">トップメニュー</a>
+		<h2 class="centermargin">会員情報</h2>
+		<form action="../SerchInfoUser" method="post" class="centermargin">
 			e-Mail : <input type="text" name="menberMail">
 			<input type="hidden" name="rePage" value="menberInfo/UserInfoSertch.jsp">
 			<input type="submit" value="検索">
 		</form>
 		
-		<table border="1">
-			<tr><td>会員ID</td><td>氏名</td><td>生年月日</td><td>入会年月日</td><td>退会年月日</td><td>最終情報更新日時</td></tr>
-			<tr><td>${menberInfo.iID}</td><td>${menberInfo.strName}</td><td>${menberInfo.birthday}</td><td>${menberInfo.join_date}</td><td>${menberInfo.secode_date}</td><td>${menberInfo.update_date}</td></tr>
-		</table>
+		<div class="tableCeter">
+			<table border="1"class="tableCeter">
+				<tr><td>会員ID</td><td>氏名</td><td>生年月日</td><td>入会年月日</td><td>退会年月日</td><td>最終情報更新日時</td></tr>
+				<tr>
+					<td>${menberInfo.iID}</td>
+					<td>${menberInfo.strName}</td>
+					<td>${menberInfo.birthday}</td>
+					<td>${menberInfo.join_date}</td>
+					<td>${menberInfo.secode_date}</td>
+					<td>${menberInfo.update_date}</td>
+				</tr>
+			</table>
+		</div>
 		
 		<c:if test="${not empty menberInfo}">
-			<form action="ChangeUserInfo" method="post"><input type="submit" value="変更"></form>
-			<form action="DeleteUser" method="post"><input type="submit" value="削除"></form>
+			<div class="centermargin">
+				<form action="ChangeUserInfo" method="post">
+					<input type="submit" value="変更" >
+					<input type="submit" value="削除"formaction="DeleteUser">
+				</form>
+			</div>
 		</c:if>
 		
-		貸出状況<br>
-		<table border="1">
-			<tr><td>在庫ID</td><td>ISBN番号</td><td>資料名</td><td>資料名</td><td>貸出年月日</td><td>返却期日</td></tr>
-			
+		<div class="centermargin">貸出状況<br></div>
+		<table border="1" class="tableCeter">
+			<tr><td>在庫ID</td><td>ISBN番号</td><td>資料名</td><td>貸出年月日</td><td>返却期日</td></tr>
+			<c:forEach items="${ rentalInfo }" var="rental">
+				<tr><td>${rental.iBookID}</td><td>${bookTitle}</td><td>${bookTitle}</td><td>${rental.dRentalDate}</td><td>${rental.dReturnDate}</td></tr>
+			</c:forEach>
 		</table>
 	</body>
 </html>

@@ -33,7 +33,7 @@ public class RentalDAO {
 	{
 		List<RentalBean> listRental = new ArrayList<RentalBean>();
 		//listRental.add(new RentalBean())
-		String sql = "SELECT * FROM rental WHERE user_id = ?";
+		String sql = "SELECT * FROM rental WHERE user_id = ? AND return_date IS NULL";
 		
 		try (
 				Connection con = DriverManager.getConnection(url,user,pass);
