@@ -14,6 +14,7 @@
 
 
 .return {
-position: relative; /* 今の位置を基準 */
-right: 20px; /* 右から10px */
-}
+  position: absolute;
+  bottom: 40px;
+  right: 50px;
+} 
