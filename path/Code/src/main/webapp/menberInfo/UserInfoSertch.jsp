@@ -47,6 +47,8 @@
 			</div>
 		</c:if>
 		
+		<br>
+		
 		<div class="centermargin">貸出状況<br></div>
 		<table border="1" class="tableCeter">
 			<tr><td>在庫ID</td><td>ISBN番号</td><td>資料名</td><td>貸出年月日</td><td>返却期日</td></tr>

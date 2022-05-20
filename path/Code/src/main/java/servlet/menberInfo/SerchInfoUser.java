@@ -26,11 +26,16 @@ public class SerchInfoUser extends HttpServlet {
 		UserBean user = null;
 		List<RentalBean> rental = new ArrayList<RentalBean>();
 		
+		if(menberMail == null || menberMail.length() == 0)
+		{
+			gotoPage(request,response,page);
+		}
+		
 		//会員を探す
 		try
 		{
 			UserDAO userDAO = new UserDAO();
-			user = userDAO.GetMenber(menberMail);
+			user = userDAO.GetUser(menberMail);
 		}catch(DAOException e) {
 			e.printStackTrace();
 			request.setAttribute("message", "エラー：SQLエラー1");
@@ -38,6 +43,11 @@ public class SerchInfoUser extends HttpServlet {
 			return;
 		}
 		
+		if(user == null)
+		{
+			gotoPage(request,response,page);
+		}
+			
 		
 		// 借りている本を探す
 		try {

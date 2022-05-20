@@ -29,7 +29,7 @@ public class UserDAO {
 	}
 	
 	//会員を取得する
-	public UserBean GetMenber(String _strMail) throws DAOException
+	public UserBean GetUser(String _strMail) throws DAOException
 	{
 		UserBean retBean = null;
 		String sql = "SELECT * FROM user_table WHERE mail = ?";
@@ -67,6 +67,16 @@ public class UserDAO {
 			}
 		
 		return retBean;
+	}
+	
+	//会員を追加する
+	boolean bAddUser(UserBean _user)
+	{
+		boolean bRet = false;
+		
+		String sql = "";
+		
+		return bRet;
 	}
 	
 
