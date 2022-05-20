@@ -1,5 +1,10 @@
 package dao;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,10 +29,34 @@ public class RentalDAO {
 	}
 	
 	//貸出情報を取得
-	public List<RentalBean> ListUserRentalInfo(int _userID)
+	public List<RentalBean> ListUserRentalInfo(int _userID)throws DAOException
 	{
 		List<RentalBean> listRental = new ArrayList<RentalBean>();
 		//listRental.add(new RentalBean())
-		return null;
+		String sql = "SELECT * FROM rental WHERE user_id = ?";
+		
+		try (
+				Connection con = DriverManager.getConnection(url,user,pass);
+				PreparedStatement ps = con.prepareStatement(sql);){
+				ps.setInt(1, _userID);
+				
+				try {
+					ResultSet rs = ps.executeQuery();
+					
+					if(rs.next())
+					{
+						listRental.add(new RentalBean(rs.getInt("rental_id"),rs.getInt("user_id"),rs.getInt("book_id"),
+								rs.getDate("rental_date"),rs.getDate("fixed_date"),rs.getDate("return_date"),rs.getString("remarks")));
+					}
+				}catch(SQLException e) {
+					e.printStackTrace();
+					throw new DAOException("エラー");
+				}
+			}catch(SQLException e) {
+				e.printStackTrace();
+				throw new DAOException("エラー");
+			}
+		
+		return listRental;
 	}
 }

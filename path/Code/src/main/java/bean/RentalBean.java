@@ -12,8 +12,8 @@ public class RentalBean implements Serializable{
 	private Date dReturnDate;
 	private String strRemarks;
 	
-	RentalBean(){}
-	RentalBean(int _iRenatalID,int _iUserID, int _iBookID,Date _dRentalDate,Date _dFixedDate, String _strRemarks)
+	public RentalBean(){}
+	public RentalBean(int _iRenatalID,int _iUserID, int _iBookID,Date _dRentalDate,Date _dFixedDate, String _strRemarks)
 	{
 		iRentalID = _iRenatalID;
 		iUserID = _iUserID;
@@ -22,13 +22,23 @@ public class RentalBean implements Serializable{
 		dFixedDate = _dFixedDate;
 		strRemarks = _strRemarks;
 	}
-	RentalBean(int _iRenatalID,int _iUserID, int _iBookID,Date _dRentalDate,Date _dFixedDate)
+	public RentalBean(int _iRenatalID,int _iUserID, int _iBookID,Date _dRentalDate,Date _dFixedDate)
 	{
 		iRentalID = _iRenatalID;
 		iUserID = _iUserID;
 		iBookID = _iBookID;
 		dRentalDate = _dRentalDate;
 		dFixedDate = _dFixedDate;
+	}
+	public RentalBean(int _iRenatalID,int _iUserID, int _iBookID,Date _dRentalDate,Date _dFixedDate, Date _dReturnDate,String _strRemarks)
+	{
+		iRentalID = _iRenatalID;
+		iUserID = _iUserID;
+		iBookID = _iBookID;
+		dRentalDate = _dRentalDate;
+		dFixedDate = _dFixedDate;
+		dReturnDate = _dReturnDate;
+		strRemarks = _strRemarks;
 	}
 	
 	public int getiRentalID() {return iRentalID;}
