@@ -19,7 +19,8 @@
 			
 	
 	E-mail  <input type="text"  name="name">
-	<input type="submit" value="検索" formaction="sample.php">
+	<input type="hidden"  name="rePage" value="/LibraryProject/lendingBook/LendingReturn.jsp">
+	<input type="submit" value="検索" formaction="../SerchInfoUser">
 		
 		
 			<table border="1">
