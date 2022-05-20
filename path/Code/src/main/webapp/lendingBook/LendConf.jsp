@@ -23,8 +23,8 @@
 	
  <table border="1" width="7%" align="center">
  <div>
- 	 <tr><td  bgcolor="#f0e68c"> 会員ID</td><th></th></tr>
- 	 <tr><td  bgcolor="#f0e68c"> 資料ID </td><th></th></tr>
+ 	 <tr><td  align="center" bgcolor="#f0e68c"> 会員ID</td><th></th></tr>
+ 	 <tr><td align="center" bgcolor="#f0e68c"> 資料ID </td><th></th></tr>
  </div>
  </table>
  
@@ -41,9 +41,9 @@
  		<tr><td></td><td></td><td></td><td></td><td></td></tr>
  		<tr><td></td><td></td><td></td><td></td><td></td></tr>
  		<tr><td></td><td></td><td></td><td></td><td></td></tr>
+ 		<tr><td></td><td></td><td></td><td></td><td></td></tr>
     </table>
 
-<br>
 <br>
 
  <form action="/LibraryProject/LeadComp" method="post">
