@@ -27,6 +27,10 @@ public class LendBookServlet extends HttpServlet {
 		try {
 			StockDAO dao = new StockDAO();
 			List<StockBean> list = dao.findBooks(lends);
+			if(list == null || list.size() == 0)
+			{
+				System.out.print("ないよ");
+			}
 			HttpSession session = request.getSession();
 			session.setAttribute("books",list);
 			RequestDispatcher rd = request.getRequestDispatcher("/LendConf.jsp");

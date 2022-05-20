@@ -29,7 +29,7 @@
 		<div> 貸し出す資料ID</div>
  </font>
 
-<form action="/LibraryProject/LeadConf" method="post">
+<form action="LendBookServlet" method="post">
 
 <%
     for (int i = 0; i < 5; i++) {
@@ -43,7 +43,7 @@
 
 <div>
 	<input type="submit" name="return" value="戻る"size="5">	
-	<input type="button"  onclick="location.href='./LendConf.jsp'"name="lend" value="貸出" size="5">
+	<input type="submit" name="lend" value="貸出" size="5">
 </div>
  </form> 
  
