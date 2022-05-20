@@ -1,5 +1,9 @@
 package dao;
 
+import java.util.Date;
+
+import bean.UserBean;
+
 public class UserDAO {
 	//URL、ユーザ名、パスワード準備
 	private String url = "jdbc:postgresql:sample";
@@ -19,5 +23,15 @@ public class UserDAO {
 	}
 	
 	//会員を取得する
-	GetMenber(int)
+	UserBean GetMenber(int _iID)
+	{
+		UserBean retBean = null;
+		
+		if(_iID == 1)
+		{
+			retBean = new UserBean(1,"あああ",1600003L,"東京都千代田区千代田1-1","01200002222","aaa@docomo.co.jp,",new Date());
+		}
+		
+		return retBean;
+	}
 }
