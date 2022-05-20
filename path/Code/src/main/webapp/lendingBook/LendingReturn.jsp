@@ -9,11 +9,11 @@
 </head>
 <body>
 
-	<a href="TopMenu.html" class="btn">トップメニュー</a>
+	<a href="/LibraryProject/TopMenu.html" class="btn">トップメニュー</a>
 
 
 
-	<form action="ReturnScreen.jsp" method="post">
+	<form action="/LibraryProject/ReturnScreen.jsp" method="post">
 		<div class="centermargin">
 			<h1>貸出・返却</h1>
 			

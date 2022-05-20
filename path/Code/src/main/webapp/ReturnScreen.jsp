@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>ReturnScreen</title>
-<link href="css/ReturnCompleted.css" rel="stylesheet">
+<link href="/LibraryProject/lendingBook/ReturnCompleted.css" rel="stylesheet">
 </head>
 <body>
 
@@ -87,7 +87,7 @@
 
 		
 
-			<input type="submit" value="戻る" formaction="sample.php"> <input
+			<input type="submit" value="戻る" formaction="LendingReturn.jsp"> <input
 				type="submit" value="返却">
 
 		</div>
