@@ -6,33 +6,45 @@
 <head>
 <meta charset="UTF-8">
 <title>lendbook</title>
+<style>
+	div { text-align : center ; }
+</style>
 </head>
 <body>
 
 <a href="/LibraryProject/TopMenu.html?Top">トップメニュー</a>
 
-	<h1 style="text-align:center">貸出</h1>
+	<div><h1>貸出</h1></div>
 
-会員情報
- <table border="1" width="7%">
- 	<tr><td align="center"> 会員ID</td><th></th></tr>
- 	 <tr><td align="center"> 資料ID </td><th></th></tr>
+<font size="4" face="ＭＳ Ｐ明朝,ＭＳ 明朝">	
+		<div>会員情報</div>
+</font>
+
+ <table border="1" width="7%" align="center">
+ 	 <tr><td align="center"  bgcolor="#f0e68c"> 会員ID</td><th></th></tr>
+ 	 <tr><td align="center"  bgcolor="#f0e68c"> 資料ID </td><th></th></tr>
  </table>
  
- 貸し出す資料ID<br>
+ <font size="4" face="ＭＳ Ｐ明朝,ＭＳ 明朝"><br>
+		<div> 貸し出す資料ID</div>
+ </font>
+
 <form action="/LibraryProject/LeadConf" method="post">
 
 <%
     for (int i = 0; i < 5; i++) {
 %>
-    	 <input type="text" name="lend" > <br>
+    <div> <input type="text" name="lend" ></div>
 <%
     }
 %>
 
+<br>
+
+<div>
 	<input type="submit" name="return" value="戻る"size="5">	
 	<input type="button"  onclick="location.href='./LendConf.jsp'"name="lend" value="貸出" size="5">
-
+</div>
  </form> 
  
  
