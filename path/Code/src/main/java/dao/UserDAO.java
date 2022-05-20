@@ -1,5 +1,10 @@
 package dao;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 
 import bean.UserBean;
@@ -24,9 +29,35 @@ public class UserDAO {
 	}
 	
 	//会員を取得する
-	public UserBean GetMenber(String _strMail)
+	public UserBean GetMenber(String _strMail) throws DAOException
 	{
 		UserBean retBean = null;
+		String sql = "SELECT * FROM user_table WHERE mail = ?";
+		
+		try (
+				Connection con = DriverManager.getConnection(url,user,pass);
+				PreparedStatement ps = con.prepareStatement(sql);){
+				ps.setString(1, _strMail);
+				
+				try {
+					ResultSet rs = ps.executeQuery();
+					
+					if(rs.next())
+					{
+						retBean = new UserBean(rs.getInt("user_id"),rs.getString("name"),
+								rs.getLong("post_no"),rs.getString("address"),rs.getString("tel"),
+								rs.getString("mail"),rs.getDate("birthday"));
+						retBean.setSecode_date(rs.getDate("secede_date"));
+						retBean.setSecode_date(rs.getDate("update_date"));
+					}
+				}catch(SQLException e) {
+					e.printStackTrace();
+					throw new DAOException("エラー");
+				}
+			}catch(SQLException e) {
+				e.printStackTrace();
+				throw new DAOException("エラー");
+			}
 		
 		if(_strMail.equals("aaa@docomo.co.jp"))
 		{

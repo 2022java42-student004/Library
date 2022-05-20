@@ -9,6 +9,7 @@
 	</head>
 	<body>
 		<h2 class="s_center">会員情報</h2>
+		会員情報<br>
 		<form action="../SerchInfoUser" method="post">
 			e-Mail : <input type="text" name="menberMail">
 			<input type="hidden" name="rePage" value="menberInfo/UserInfoSertch.jsp">
@@ -20,5 +21,15 @@
 			<tr><td>${menberInfo.iID}</td><td>${menberInfo.strName}</td><td>${menberInfo.birthday}</td><td>${menberInfo.join_date}</td><td>${menberInfo.secode_date}</td><td>${menberInfo.update_date}</td></tr>
 		</table>
 		
+		<c:if test="${not empty menberInfo}">
+			<form action="ChangeUserInfo" method="post"><input type="submit" value="変更"></form>
+			<form action="DeleteUser" method="post"><input type="submit" value="削除"></form>
+		</c:if>
+		
+		貸出状況<br>
+		<table border="1">
+			<tr><td>在庫ID</td><td>ISBN番号</td><td>資料名</td><td>資料名</td><td>貸出年月日</td><td>返却期日</td></tr>
+			
+		</table>
 	</body>
 </html>

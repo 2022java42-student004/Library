@@ -54,10 +54,10 @@ public class UserBean implements Serializable{
 	public void setJoin_date(Date join_date) {this.join_date = join_date;}
 	
 	public Date getSecode_date() {return secode_date;}
-	public void setSecode_date() {this.secode_date = new Date();}
+	public void setSecode_date(Date secode_date) {this.secode_date = secode_date;}
 	
 	public Date getUpdate_date() {return update_date;}
-	public void setUpdate_date() {this.update_date = new Date();}
+	public void setUpdate_date(Date update_date) {this.update_date = update_date;}
 	
 	
 }
