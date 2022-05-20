@@ -16,13 +16,13 @@ import dao.UserDAO;
 @WebServlet("/SerchInfoUser")
 public class SerchInfoUser extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int menberID = Integer.parseInt(request.getParameter("menberID"));
+		String menberMail = request.getParameter("menberMail");
 		String page = request.getParameter("rePage");
 		UserBean user = null;
 		try
 		{
 			UserDAO userDAO = new UserDAO();
-			user = userDAO.GetMenber(menberID);
+			user = userDAO.GetMenber(menberMail);
 		}catch(DAOException e) {
 			e.printStackTrace();
 			request.setAttribute("message", "エラー：SQLエラー");
