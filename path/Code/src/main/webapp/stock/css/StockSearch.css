@@ -12,4 +12,8 @@
 	bottom: 0;
 }
 
-	
+
+.return {
+position: relative; /* 今の位置を基準 */
+right: 20px; /* 右から10px */
+}
