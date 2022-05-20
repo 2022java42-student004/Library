@@ -28,7 +28,7 @@ public class UserDAO {
 	{
 		UserBean retBean = null;
 		
-		if(_strMail.equals("aaa@docomo.co.jp,"))
+		if(_strMail.equals("aaa@docomo.co.jp"))
 		{
 			retBean = new UserBean(1,"あああ",1600003L,"東京都千代田区千代田1-1","01200002222","aaa@docomo.co.jp,",new Date());
 		}
