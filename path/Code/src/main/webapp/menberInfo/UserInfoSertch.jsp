@@ -20,7 +20,6 @@
 		<h2 class="centermargin">会員情報</h2>
 		<form action="../SerchInfoUser" method="post" class="centermargin">
 			e-Mail : <input type="text" name="menberMail">
-			<input type="hidden" name="rePage" value="menberInfo/UserInfoSertch.jsp">
 			<input type="submit" value="検索">
 		</form>
 		
