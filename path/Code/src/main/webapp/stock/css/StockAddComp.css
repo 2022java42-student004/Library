@@ -1,4 +1,3 @@
-/*資料検索画面（004-002）*/
 @charset "UTF-8";
 
 .centermargin {
@@ -12,8 +11,8 @@
 	bottom: 0;
 }
 
-
-.return {
-position: relative; /* 今の位置を基準 */
-right: 20px; /* 右から10px */
-}
+.enter {
+  position: absolute;
+  bottom: 40px;
+  right: 50px;
+} 
