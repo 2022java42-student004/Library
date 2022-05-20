@@ -28,7 +28,7 @@ public class SerchInfoUser extends HttpServlet {
 		
 		if(menberMail == null || menberMail.length() == 0)
 		{
-			gotoPage(request,response,page);
+			gotoPage(request,response,request.getHeader("REFERER").substring(36));
 		}
 		
 		//会員を探す
@@ -45,7 +45,7 @@ public class SerchInfoUser extends HttpServlet {
 		
 		if(user == null)
 		{
-			gotoPage(request,response,page);
+			gotoPage(request,response,request.getHeader("REFERER").substring(36));
 		}
 			
 		
@@ -64,7 +64,7 @@ public class SerchInfoUser extends HttpServlet {
 		request.setAttribute("isbm", "0123456789000");
 		request.setAttribute("menberInfo", user);
 		request.setAttribute("rentalInfo", rental);
-		gotoPage(request,response,page);
+		gotoPage(request,response,request.getHeader("REFERER").substring(36));
 	}
 	
 	private void gotoPage(HttpServletRequest request, HttpServletResponse response,String page) throws ServletException, IOException 
