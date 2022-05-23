@@ -29,7 +29,7 @@
 		<div> 貸し出す資料ID</div>
  </font>
 
-<form action="LendBookServlet" method="post">
+<form action="/LibraryProject/LendBookServlet" method="post">
 
 <%
     for (int i = 0; i < 5; i++) {

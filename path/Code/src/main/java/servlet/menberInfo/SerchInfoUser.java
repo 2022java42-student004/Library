@@ -65,7 +65,10 @@ public class SerchInfoUser extends HttpServlet {
 		request.setAttribute("isbm", "0123456789000");
 		request.setAttribute("menberInfo", user);
 		request.setAttribute("rentalInfo", rental);
-		gotoPage(request,response,request.getHeader("REFERER").substring(36));
+		
+		;
+		
+		gotoPage(request,response,response.encodeURL(request.getHeader("REFERER")).substring(36));
 	}
 	
 	private void gotoPage(HttpServletRequest request, HttpServletResponse response,String page) throws ServletException, IOException 
