@@ -3,18 +3,20 @@ package bean;
 import java.io.Serializable;
 
 public class StockBean implements Serializable {
-	int bookId;
+	int book_id;
 	long isbn;
 	String title;
-	String arrivaldate;
-	String discarDate;
+	String arrival_date;
+	String discar_date;
 	String remarks;
 	
-	public int getBookId() {
-		return bookId;
+	
+	
+	public int getBook_id() {
+		return book_id;
 	}
-	public void setBookId(int bookId) {
-		this.bookId = bookId;
+	public void setBook_id(int book_id) {
+		this.book_id = book_id;
 	}
 	public long getIsbn() {
 		return isbn;
@@ -28,18 +30,19 @@ public class StockBean implements Serializable {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getArrivaldate() {
-		return arrivaldate;
+	public String getArrival_date() {
+		return arrival_date;
 	}
-	public void setArrivaldate(String arrivaldate) {
-		this.arrivaldate = arrivaldate;
+	public void setArrival_date(String arrival_date) {
+		this.arrival_date = arrival_date;
 	}
-	public String getDiscarDate() {
-		return discarDate;
+	public String getDiscar_date() {
+		return discar_date;
 	}
-	public void setDiscarDate(String discarDate) {
-		this.discarDate = discarDate;
+	public void setDiscar_date(String discar_date) {
+		this.discar_date = discar_date;
 	}
+	
 	public String getRemarks() {
 		return remarks;
 	}

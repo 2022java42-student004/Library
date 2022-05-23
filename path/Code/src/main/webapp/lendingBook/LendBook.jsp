@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<a href="/LibraryProject/TopMenu.html?Top">トップメニュー</a>
+<a href="/Library/TopMenu.html?Top">トップメニュー</a>
 
 	<div><h1>貸出</h1></div>
 
@@ -29,6 +29,7 @@
 		<div> 貸し出す資料ID</div>
  </font>
 
+<div>
 <form action="/LibraryProject/LendBookServlet" method="post">
 
 <%
@@ -43,7 +44,7 @@
 
 <div>
 	<input type="submit" name="return" value="戻る"size="5">	
-	<input type="submit" name="lend" value="貸出" size="5">
+	<input type="submit" name="lending" value="貸出" size="5">
 </div>
  </form> 
  
