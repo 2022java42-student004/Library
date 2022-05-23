@@ -45,6 +45,7 @@ public class SerchInfoUser extends HttpServlet {
 		
 		if(user == null)
 		{
+			request.setAttribute("bookTitle", "聖書");
 			gotoPage(request,response,request.getHeader("REFERER").substring(36));
 		}
 			

@@ -8,6 +8,8 @@ public class RentalBean implements Serializable{
 	private int iRentalID;
 	private int iUserID;
 	private int iBookID;
+	private long isbn;
+	private String title;
 	private String dRentalDate;
 	private String dFixedDate;
 	private String dReturnDate;
@@ -47,6 +49,17 @@ public class RentalBean implements Serializable{
 		strRemarks = _strRemarks;
 	}
 	
+	public RentalBean(int _iBookID, long _isbn, String _title,Date _dRentalDate,Date _dFixedDate)
+	{
+		fm = new SimpleDateFormat("yyyy/MM/dd");
+		iBookID = _iBookID;
+		isbn = _isbn;
+		title = _title;
+		dRentalDate = fm.format(_dRentalDate);
+		dFixedDate = fm.format(_dFixedDate);
+	}
+	
+	
 	public int getiRentalID() {return iRentalID;}
 	public void setiRentalID(int iRentalID) {this.iRentalID = iRentalID;}
 	
@@ -55,6 +68,12 @@ public class RentalBean implements Serializable{
 	
 	public int getiBookID() {return iBookID;}
 	public void setiBookID(int iBookID) {this.iBookID = iBookID;}
+	
+	public long getIsbn() {return isbn;}
+	public void setIsbn(int isbn) {this.isbn = isbn;}
+	
+	public String getTitle() {return title;}
+	public void setTitle(Date title) {this.title = fm.format(title);}
 	
 	public String getdRentalDate() {return dRentalDate;}
 	public void setdRentalDate(Date dRentalDate) {this.dRentalDate = fm.format(dRentalDate);}
