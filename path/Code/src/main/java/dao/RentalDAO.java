@@ -33,7 +33,7 @@ public class RentalDAO {
 	{
 		List<RentalBean> listRental = new ArrayList<RentalBean>();
 		//listRental.add(new RentalBean())
-		String sql = "SELECT * FROM rental INNER JOIN stock ON rental.book_id = stock.book_id WHERE rental.user_id = ?";
+		String sql = "SELECT * FROM rental INNER JOIN stock ON rental.book_id = stock.book_id WHERE rental.user_id = ? AND return_date IS NULL";
 		
 		
 		try (
@@ -44,7 +44,7 @@ public class RentalDAO {
 				try {
 					ResultSet rs = ps.executeQuery();
 					
-					if(rs.next())
+					while(rs.next())
 					{
 						listRental.add(new RentalBean(rs.getInt("book_id"),rs.getLong("isbn"),rs.getString("title"),
 								rs.getDate("rental_date"),rs.getDate("fixed_date")));
