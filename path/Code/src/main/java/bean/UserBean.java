@@ -29,7 +29,7 @@ public class UserBean implements Serializable{
 		this.address = _address;
 		this.tel = _tel;
 		this.mail = _mail;
-		this.birthday = nomalFM.format(_join_date);
+		this.birthday = nomalFM.format(_birthday);
 		this.join_date = nomalFM.format(_join_date);
 	};
 	
@@ -54,9 +54,11 @@ public class UserBean implements Serializable{
 	
 	public String getBirthday() {return birthday;}
 	public void setBirthday(Date birthday) {this.birthday = nomalFM.format(birthday);}
+	public void setBirthday(String birthday) {this.birthday = birthday;}
 	
 	public String getJoin_date() {return join_date;}
 	public void setJoin_date(Date join_date) {this.join_date = nomalFM.format(join_date);}
+	public void setJoin_date(String join_date) {this.join_date = join_date;}
 	
 	public String getSecode_date() {return secode_date;}
 	public void setSecode_date(Date secode_date) {this.secode_date = nomalFM.format(secode_date);}

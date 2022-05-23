@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import bean.UserBean;
@@ -70,12 +71,48 @@ public class UserDAO {
 	}
 	
 	//会員を追加する
-	boolean bAddUser(UserBean _user)
+	public boolean bAddUser(UserBean _user) throws DAOException
 	{
 		boolean bRet = false;
 		
-		String sql = "";
+		//先にシーケンス情報を取得
+		String sql = "SELECT nextval('user_sequence')";
 		
+		try(				Connection con = DriverManager.getConnection(url,user,pass);
+				PreparedStatement ps = con.prepareStatement(sql);)
+		{
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+			throw new DAOException("エラー");
+		}
+		
+		//追加
+		 sql = "INSERT INTO user_table VALUES (,?,?,?,?,?,?,?)";
+		
+		try (
+				Connection con = DriverManager.getConnection(url,user,pass);
+				PreparedStatement ps = con.prepareStatement(sql);)
+		{
+			Date date = new Date();
+			SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
+			ps.setString(1, _user.getStrName());
+			ps.setLong(2, _user.getPost_no());
+			ps.setString(3, _user.getAddress());
+			ps.setString(4, _user.getTel());
+			ps.setString(5, _user.getMail());
+			ps.setString(6, _user.getBirthday());
+			ps.setString(7, fmt.format(date));
+			
+			int n = ps.executeUpdate();
+			if(n == 1)
+			{
+				bRet = true;
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+			throw new DAOException("エラー");
+		}
 		return bRet;
 	}
 	
