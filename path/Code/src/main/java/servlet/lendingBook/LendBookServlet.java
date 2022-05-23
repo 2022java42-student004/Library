@@ -1,4 +1,4 @@
-package servlet;
+package servlet.lendingBook;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -46,7 +46,7 @@ public class LendBookServlet extends HttpServlet {
 			request.setAttribute("message", "内部エラーが発生しました。");
 			RequestDispatcher rd = request.getRequestDispatcher("/errInternal.jsp");
 			rd.forward(request, response);
-		
+		}
 	}
 
 	
