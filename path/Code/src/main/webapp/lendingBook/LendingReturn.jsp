@@ -57,7 +57,7 @@
 					<th width="150">返却期日</th>
 				</tr>
 
-				<c:forEach items="${rentalInfo}" var="book" varStatus="stat">
+				<c:forEach items="${sessionScope.rentalInfo}" var="book" varStatus="stat">
 
 					<tr>
 					

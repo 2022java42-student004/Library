@@ -41,44 +41,20 @@
 				</tr>
 
 
-				<tr>
+			
+					<c:forEach items="${stat.count }" var="book" varStatus="stat">
 
-		
+					<tr>
+						
+						<th>${book.iBookID}</th>
+						<th>${book.isbn}</th>
+						<th>${book.title}</th>
+						<th>${book.dRentalDate}</th>
+						<th>${book.dFixedDate}</th>
 
-					<th></th>
-					<th></th>
-					<th></th>
-					<th></th>
-					<th></th>
-				</tr>
+					</tr>
 
-
-				<tr>
-				
-					<th></th>
-					<th></th>
-					<th></th>
-					<th></th>
-					<th></th>
-				</tr>
-
-				<tr>
-					
-					<th></th>
-					<th></th>
-					<th></th>
-					<th></th>
-					<th></th>
-				</tr>
-
-				<tr>
-				
-					<th></th>
-					<th></th>
-					<th></th>
-					<th></th>
-					<th></th>
-				</tr>
+				</c:forEach>
 
 
 

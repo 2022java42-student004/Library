@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="java.util.ArrayList"%>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,44 +45,23 @@
 				</tr>
 
 
-				<tr>
+				
 
-					<th><input type="checkbox" name="return" value="1"></th>
+					
 
-					<th>${sessionScope.menberInfo.strName}</th>
-					<th></th>
-					<th></th>
-					<th></th>
-					<th></th>
-				</tr>
+					<c:forEach items="${sessionScope.rentalInfo}" var="book" varStatus="stat">
 
+					<tr>
+						<td><input type="checkbox" name="return" value=${stat.count }></td>
+						<th>${book.iBookID}</th>
+						<th>${book.isbn}</th>
+						<th>${book.title}</th>
+						<th>${book.dRentalDate}</th>
+						<th>${book.dFixedDate}</th>
 
-				<tr>
-					<th><input type="checkbox" name="return" value="2"></th>
-					<th></th>
-					<th></th>
-					<th></th>
-					<th></th>
-					<th></th>
-				</tr>
+					</tr>
 
-				<tr>
-					<th><input type="checkbox" name="return" value="3"></th>
-					<th></th>
-					<th></th>
-					<th></th>
-					<th></th>
-					<th></th>
-				</tr>
-
-				<tr>
-					<th><input type="checkbox" name="return" value="4"></th>
-					<th></th>
-					<th></th>
-					<th></th>
-					<th></th>
-					<th></th>
-				</tr>
+				</c:forEach>
 
 
 
