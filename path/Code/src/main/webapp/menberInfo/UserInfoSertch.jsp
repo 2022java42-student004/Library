@@ -19,7 +19,7 @@
 	<a href="/LibraryProject/TopMenu.html?Top">トップメニュー</a>
 		<h2 class="centermargin">会員情報</h2>
 		<form action="../SerchInfoUser" method="post" class="centermargin">
-			e-Mail : <input type="text" name="menberMail">
+			e-Mail : <input type="text" name="menberMail" value=${sertch}>
 			<input type="submit" value="検索">
 		</form>
 		
@@ -52,7 +52,7 @@
 		<table border="1" class="tableCeter">
 			<tr><td>在庫ID</td><td>ISBN番号</td><td>資料名</td><td>貸出年月日</td><td>返却期日</td></tr>
 			<c:forEach items="${ rentalInfo }" var="rental">
-				<tr><td>${rental.iBookID}</td><td>${bookTitle}</td><td>${bookTitle}</td><td>${rental.dRentalDate}</td><td>${rental.dReturnDate}</td></tr>
+				<tr><td>${rental.iBookID}</td><td>${rental.isbn}</td><td>${rental.title}</td><td>${rental.dRentalDate}</td><td>${rental.dReturnDate}</td></tr>
 			</c:forEach>
 		</table>
 	</body>

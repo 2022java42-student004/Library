@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import bean.RentalBean;
 import bean.UserBean;
@@ -22,7 +23,6 @@ public class SerchInfoUser extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String menberMail = request.getParameter("menberMail");
-		String page = request.getParameter("rePage");
 		UserBean user = null;
 		List<RentalBean> rental = new ArrayList<RentalBean>();
 		
@@ -45,8 +45,8 @@ public class SerchInfoUser extends HttpServlet {
 		
 		if(user == null)
 		{
-			request.setAttribute("bookTitle", "聖書");
-			gotoPage(request,response,request.getHeader("REFERER").substring(36));
+			user = new UserBean();			
+			response.sendRedirect(request.getHeader("REFERER"));
 		}
 			
 		
@@ -61,14 +61,12 @@ public class SerchInfoUser extends HttpServlet {
 			return;
 		}
 		
-		request.setAttribute("bookTitle", "聖書");
-		request.setAttribute("isbm", "0123456789000");
-		request.setAttribute("menberInfo", user);
-		request.setAttribute("rentalInfo", rental);
+		HttpSession session = request.getSession();
 		
-		;
+		session.setAttribute("menberInfo", user);
+		session.setAttribute("rentalInfo", rental);
 		
-		gotoPage(request,response,response.encodeURL(request.getHeader("REFERER")).substring(36));
+		response.sendRedirect(request.getHeader("REFERER"));
 	}
 	
 	private void gotoPage(HttpServletRequest request, HttpServletResponse response,String page) throws ServletException, IOException 
