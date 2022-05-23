@@ -11,7 +11,7 @@
 <body>
 
 <div class="leftmargin">
-	 <a href="../../TopMenu.html" >トップメニュー</a>
+	 <a href="../TopMenu.html" >トップメニュー</a>
     </div>
 
 <div class="centermargin">
@@ -87,5 +87,9 @@ ISBN番号
 </div>
 
 <br>
+
+<div class="return">
+<input type="button" onclick="location.href='StockMenu.html'" name="return" value="資料管理メニューへ戻る">	
+</div>
 </body>
 </html>
