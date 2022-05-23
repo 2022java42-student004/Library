@@ -41,7 +41,8 @@
 	
 
 	<form action="../SerchInfoUser" method="post">
-
+	<input type="hidden" name="userID" value=${menberInfo.iID}>
+	
 		<div>
 			<table border="1">
 
