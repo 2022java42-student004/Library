@@ -28,7 +28,8 @@ public class SerchInfoUser extends HttpServlet {
 		
 		if(menberMail == null || menberMail.length() == 0)
 		{
-			gotoPage(request,response,request.getHeader("REFERER").substring(36));
+			response.sendRedirect(request.getHeader("REFERER"));
+			return;
 		}
 		
 		//会員を探す
@@ -44,9 +45,9 @@ public class SerchInfoUser extends HttpServlet {
 		}
 		
 		if(user == null)
-		{
-			user = new UserBean();			
+		{			
 			response.sendRedirect(request.getHeader("REFERER"));
+			return;
 		}
 			
 		
@@ -62,6 +63,7 @@ public class SerchInfoUser extends HttpServlet {
 		}
 		
 		HttpSession session = request.getSession();
+			
 		
 		session.setAttribute("menberInfo", user);
 		session.setAttribute("rentalInfo", rental);

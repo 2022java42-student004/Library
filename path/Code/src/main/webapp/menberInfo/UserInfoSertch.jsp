@@ -27,12 +27,12 @@
 			<table border="1"class="tableCeter">
 				<tr><td>会員ID</td><td>氏名</td><td>生年月日</td><td>入会年月日</td><td>退会年月日</td><td>最終情報更新日時</td></tr>
 				<tr>
-					<td>${menberInfo.iID}</td>
-					<td>${menberInfo.strName}</td>
-					<td>${menberInfo.birthday}</td>
-					<td>${menberInfo.join_date}</td>
-					<td>${menberInfo.secode_date}</td>
-					<td>${menberInfo.update_date}</td>
+						<td>${sessionScope.menberInfo.iID}</td>
+						<td>${sessionScope.menberInfo.strName}</td>
+						<td>${sessionScope.menberInfo.birthday}</td>
+						<td>${sessionScope.menberInfo.join_date}</td>
+						<td>${sessionScope.menberInfo.secode_date}</td>
+						<td>${sessionScope.menberInfo.update_date}</td>
 				</tr>
 			</table>
 		</div>
