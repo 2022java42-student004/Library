@@ -38,18 +38,18 @@
 			<td>${menberInfo.strName}</td>
 		</tr>
 	</table>
-	
 
-	<form action="../SerchInfoUser" method="post">
-	<input type="hidden" name="userID" value=${menberInfo.iID}>
-	
+
+	<form action="../ReturnScreen.jsp" method="post">
+		<input type="hidden" name="userID" value=${menberInfo.iID}> <input
+			type="hidden" name="userName" value=${menberInfo.strName}>
+
 		<div>
 			<table border="1">
 
 
 
 				<tr>
-					<th width="50" height="50"></th>
 					<th width="150">資料ID</th>
 					<th width="150">ISBN番号</th>
 					<th width="150">資料名</th>
@@ -60,8 +60,7 @@
 				<c:forEach items="${rentalInfo}" var="book" varStatus="stat">
 
 					<tr>
-
-						<th><input type="checkbox" name="return" value=${stat.count}></th>
+					
 						<th>${book.iBookID}</th>
 						<th>${book.isbn}</th>
 						<th>${book.title}</th>
@@ -72,13 +71,13 @@
 
 				</c:forEach>
 			</table>
- 
 
-  
+
+
 			<input type="submit" value="貸出" formaction="sample.php"> <input
 				type="submit" value="返却">
- </div>
-</form>
-	
+		</div>
+	</form>
+
 </body>
 </html>

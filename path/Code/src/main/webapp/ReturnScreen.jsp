@@ -19,11 +19,11 @@
 			<table border="1">
 				<tr>
 					<th>会員ID</th>
-					<th width="300"></th>
+					<th width="300">${sessionScope.menberInfo.iID }</th>
 				</tr>
 				<tr>
 					<th>氏名</th>
-					<th width="300"></th>
+					<th width="300">${sessionScope.menberInfo.strName}</th>
 				</tr>
 			</table>
 
@@ -46,7 +46,7 @@
 
 					<th><input type="checkbox" name="return" value="1"></th>
 
-					<th></th>
+					<th>${sessionScope.menberInfo.strName}</th>
 					<th></th>
 					<th></th>
 					<th></th>

@@ -33,7 +33,6 @@
 
 			<table border="1">
 				<tr>
-					<th width="50" height="50"></th>
 					<th width="150">資料ID</th>
 					<th width="150">ISBN番号</th>
 					<th width="150">資料名</th>
@@ -44,7 +43,7 @@
 
 				<tr>
 
-					<th><input type="checkbox" name="return" value="1"></th>
+		
 
 					<th></th>
 					<th></th>
@@ -55,7 +54,7 @@
 
 
 				<tr>
-					<th><input type="checkbox" name="return" value="2"></th>
+				
 					<th></th>
 					<th></th>
 					<th></th>
@@ -64,7 +63,7 @@
 				</tr>
 
 				<tr>
-					<th><input type="checkbox" name="return" value="3"></th>
+					
 					<th></th>
 					<th></th>
 					<th></th>
@@ -73,7 +72,7 @@
 				</tr>
 
 				<tr>
-					<th><input type="checkbox" name="return" value="4"></th>
+				
 					<th></th>
 					<th></th>
 					<th></th>
