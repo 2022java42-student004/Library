@@ -22,7 +22,12 @@ import dao.UserDAO;
 public class SerchInfoUser extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		HttpSession session = request.getSession();
+		session.setAttribute("sertch", request.getParameter("sertch"));
+		
 		String menberMail = request.getParameter("menberMail");
+		
+		
 		UserBean user = null;
 		List<RentalBean> rental = new ArrayList<RentalBean>();
 		
@@ -62,7 +67,7 @@ public class SerchInfoUser extends HttpServlet {
 			return;
 		}
 		
-		HttpSession session = request.getSession();
+		
 			
 		
 		session.setAttribute("menberInfo", user);
